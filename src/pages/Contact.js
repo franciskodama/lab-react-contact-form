@@ -1,3 +1,4 @@
+import { server } from '../config/index';
 import React, { useState } from 'react';
 
 const ContactForm = () => {
@@ -12,7 +13,7 @@ const ContactForm = () => {
       email: email.value,
       message: message.value,
     };
-    let response = await fetch('http://localhost:3005/contact', {
+    let response = await fetch(`${server}/contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
